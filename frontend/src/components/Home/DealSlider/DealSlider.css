@@ -1,0 +1,11 @@
+.featured__categories__card__container {
+    margin: 20px auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* padding: 50px 0; */
+    
+}
