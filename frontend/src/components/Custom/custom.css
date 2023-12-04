@@ -1,0 +1,46 @@
+.flipbackpara{
+    font-size: 11px;
+}
+.frontcaard{
+    background-image: linear-gradient(to right bottom, rgba(30, 11, 54, 0.65), rgba(202, 55, 130, 0.7)), url(../../assets/images/backkkks.jpg);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bacckkcard{
+    background-image: linear-gradient(to right bottom, rgba(30, 11, 54, 0.65), rgba(202, 55, 130, 0.7)), url(../../assets/images/backkkks.jpg);
+    color: white;
+}
+.frontcaard1{
+    background: linear-gradient(-45deg, #f321d7, #ffec61);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bacckkcard1{
+    background: linear-gradient(-45deg, #ffec61, #f321d7);
+    color: white;
+}
+.customcards{
+    display: flex;
+    justify-content: space-evenly;
+}
+.dragndrop{
+    height: 33vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width :750px) {
+    .customcards{
+        flex-direction: column;
+        align-items: center;
+    }
+    .cardddd{
+        /* width: 300px !important; */
+        /* height: 300px !important; */
+        margin-bottom: 1rem;
+    }
+}

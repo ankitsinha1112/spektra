@@ -57,7 +57,7 @@ const Header = () => {
 
           {toggleSecondaryDropDown && <SecondaryDropDownMenu />} */}
 
-          <Link to="/" className="flex items-center text-black font-medium gap-2 relative">
+          <Link to="/custom" className="flex items-center text-black font-medium gap-2 relative">
             <span><DashboardCustomizeIcon /></span>
             Custom
           </Link>

@@ -1,0 +1,99 @@
+.featured__categories__card__container {
+	margin: 20px auto;
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	/* padding: 50px 0; */
+
+}
+
+/* *{padding: 0; margin: 0; box-sizing: border-box;}
+body{height: 900px;} */
+.priordiv {
+	/* background: url('http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg'); */
+	text-align: center;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	overflow: hidden;
+	/* border-radius: 0 0 85% 85% / 30%; */
+}
+
+.priordiv .overlay {
+	width: 100%;
+	height: 100%;
+	padding: 50px;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #333;
+	background-image: linear-gradient(135deg, #9f05ff69 10%, #fd5e086b 100%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.priordiv>h1 {
+	font-family: 'Dancing Script', cursive;
+	font-size: 80px;
+	margin-bottom: 30px;
+}
+
+.head1 {
+	font-family: 'Dancing Script', cursive;
+	font-size: 80px;
+	margin-bottom: 30px;
+	line-height: 1;
+}
+
+.priordiv>h3 {
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 30px;
+}
+
+.head2 {
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 30px;
+	text-align: justify;
+	font-weight: 700;
+}
+
+.butttn {
+	border: none;
+	outline: none;
+	padding: 10px 20px;
+	border-radius: 50px;
+	color: #333;
+	background: #fff;
+	/* margin-bottom: 50px; */
+	box-shadow: 0 3px 20px 0 #0000003b;
+}
+
+.butttn:hover {
+	cursor: pointer;
+}
+
+@media screen and (max-width : 650px) {
+	.head1 {
+		font-size: 48px;
+		line-height: normal;
+		margin-bottom: 15px;
+	}
+
+	.head2 {
+		font-size: 18px;
+		margin-bottom: 15px;
+	}
+
+	.priordiv .overlay {
+		padding: 15px;
+	}
+
+	.butttn {
+		font-size: 16px;
+	}
+}

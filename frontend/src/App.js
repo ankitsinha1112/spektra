@@ -14,6 +14,7 @@ import ResetPassword from './components/User/ResetPassword';
 import Account from './components/User/Account';
 import ProtectedRoute from './Routes/ProtectedRoute';
 import Home from './components/Home/Home';
+import Custom from './components/Custom/Index';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import Products from './components/Products/Products';
 import Cart from './components/Cart/Cart';
@@ -85,6 +86,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/custom" element={<Custom />} />
 
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/products" element={<Products />} />

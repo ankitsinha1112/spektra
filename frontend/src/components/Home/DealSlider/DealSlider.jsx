@@ -46,7 +46,7 @@ export const settings = {
     ]
 };
 
-const featuredCategories = [{id:1,image:slide1,url:'/',name:'Create Your Own Tattoo Masterpiece - No Regrets!',
+const featuredCategories = [{id:1,image:slide1,url:'/custom',name:'Create Your Own Tattoo Masterpiece - No Regrets!',
 desc:"Don't settle for ordinary. With our options to create custom temporary tattoos, you become the artist! Design a unique masterpiece using AI, that perfectly captures your personality and makes a bold statement. Be the envy of your friends with a custom creation that's as epic as you are."
 },{id:2,image:slide2,url:'/products?type=Temperory',name:'Express Yourself with Funky and Bold Temporary Tattoos',desc:"Dive into a playground of self-expression with our jaw-dropping collection of temporary tattoos. Unleash your inner rebel, rock star, or trendsetter. Our funky designs let you switch up your style effortlessly and make heads turn wherever you go."},
 {id:3,image:slide1,url:'/products?type=Semi-permanent',name:'Temporary Tattoos for Every Damn Occasion',desc:"Ready to steal the show? Our temporary tattoos are the ultimate party accessory. From wild nights out to Enchanting Trips/Vacations, we've got you covered. Stand out from the crowd, embrace the moment, and leave an unforgettable impression wherever you rock our badass temporary tattoos."}]

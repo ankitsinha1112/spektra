@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Categories from '../Layouts/Categories';
 import Banner from './Banner/Banner';
+import BannerTitle from './BannerTitle/BannerTitle';
 import DealSlider from './DealSlider/DealSlider';
 import ProductSlider from './ProductSlider/ProductSlider';
 import { useDispatch, useSelector } from 'react-redux';
@@ -29,6 +30,7 @@ const Home = () => {
       <Categories />
       <main className="flex flex-col gap-3 px-2 mt-16 sm:mt-2">
         <Banner />
+        <BannerTitle title={"No Regrets, Only Style!"} custom={false} para={"Bid farewell to tattoo regrets and embrace the fearless life of temporary ink. No more tattoo regrets! Spektra Tatz is here to rescue you from permanent ink mishaps. Say hello to temporary tattoos—the ultimate freedom to express yourself without the lifelong commitment. Experiment, have fun, and change your look as often as your mood strikes. It's time to unleash your inner badass and make a statement that's as fierce as you are."} />
         <DealSlider title={"Featured Categories"} />
         {/* <DealSlider title={"Discounts for You"} /> */}
         {!loading && <ProductSlider title={"Suggested for You"} tagline={"Based on Your Activity"} />}
