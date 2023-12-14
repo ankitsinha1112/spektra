@@ -1,12 +1,4 @@
-import mobiles from '../../assets/images/Categories/phone.png';
 import fashion from '../../assets/images/Categories/t2.png';
-import electronics from '../../assets/images/Categories/electronics.png';
-import home from '../../assets/images/Categories/home.png';
-import travel from '../../assets/images/Categories/travel.png';
-import appliances from '../../assets/images/Categories/appliances.png';
-import furniture from '../../assets/images/Categories/furniture.png';
-import beauty from '../../assets/images/Categories/beauty.png';
-import grocery from '../../assets/images/Categories/grocery.png';
 import { Link } from 'react-router-dom';
 
 const catNav = [

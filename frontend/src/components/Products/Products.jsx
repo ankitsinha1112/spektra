@@ -22,7 +22,7 @@ import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import POPUpdate from './POPUpdate';
 const Products = () => {
-
+    const [categoriesSorted, setCategoriesSorted] = useState(categories);
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { enqueueSnackbar } = useSnackbar();
@@ -63,6 +63,13 @@ const Products = () => {
             enqueueSnackbar(error, { variant: "error" });
             dispatch(clearErrors());
         }
+        const sorted = [...categories];
+        const selectedCategoryIndex = sorted.indexOf(category);
+        if (selectedCategoryIndex !== -1) {
+            sorted.splice(selectedCategoryIndex, 1);
+            sorted.unshift(category);
+        }
+        setCategoriesSorted(sorted);
         dispatch(getProducts(keyword, category,type, price, ratings, currentPage));
         
     }, [dispatch, keyword, category,type, price, ratings, currentPage, error, enqueueSnackbar]);
@@ -92,7 +99,7 @@ const Products = () => {
                     <div className="hidden sm:flex flex-col w-1/5 px-1">
 
                         {/* <!-- nav tiles --> */}
-                        <div className="flex flex-col bg-white rounded-sm shadow">
+                        <div className="flex flex-col bg-white rounded-sm shadow" style={{position: "sticky",top: "9vh"}}>
 
                             {/* <!-- filters header --> */}
                             <div className="flex items-center justify-between gap-5 px-4 py-2 border-b">
@@ -143,7 +150,7 @@ const Products = () => {
                                                     name="category-radio-buttons"
                                                     value={category}
                                                 >
-                                                    {categories.map((el, i) => (
+                                                    {categoriesSorted.map((el, i) => (
                                                         <FormControlLabel value={el} control={<Radio size="small" />} label={<span className="text-sm" key={i}>{el}</span>} />
                                                     ))}
                                                 </RadioGroup>

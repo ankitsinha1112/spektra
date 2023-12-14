@@ -26,7 +26,7 @@ const Home = () => {
 
   return (
     <>
-      <MetaData title="Online Shopping Site for Tatoo. Best Offers!" />
+      <MetaData title="Online Shopping Site for Crazy Tatoo." />
       <Categories />
       <main className="flex flex-col gap-3 px-2 mt-16 sm:mt-2">
         <Banner />
