@@ -1,6 +1,7 @@
 import WebFont from 'webfontloader';
 import Footer from './components/Layouts/Footer/Footer';
 import Header from './components/Layouts/Header/Header';
+import Header1 from './components/Layouts/Header/Header1';
 import Login from './components/User/Login';
 import Register from './components/User/Register';
 import { Routes, Route, useLocation } from 'react-router-dom';
@@ -30,6 +31,7 @@ import MainData from './components/Admin/MainData';
 import OrderTable from './components/Admin/OrderTable';
 import UpdateOrder from './components/Admin/UpdateOrder';
 import ProductTable from './components/Admin/ProductTable';
+import CustomProductTable from './components/Admin/CustomProductTable';
 import NewProduct from './components/Admin/NewProduct';
 import UpdateProduct from './components/Admin/UpdateProduct';
 import UserTable from './components/Admin/UserTable';
@@ -37,6 +39,8 @@ import UpdateUser from './components/Admin/UpdateUser';
 import ReviewsTable from './components/Admin/ReviewsTable';
 import Wishlist from './components/Wishlist/Wishlist';
 import NotFound from './components/NotFound';
+import Navbar from './components/Layouts/Navbar';
+import Logo from './assets/images/logo (1).png'
 
 function App() {
 
@@ -72,16 +76,19 @@ function App() {
   }, [pathname])
 
   // disable right click
-  window.addEventListener("contextmenu", (e) => e.preventDefault());
-  window.addEventListener("keydown", (e) => {
-    if (e.keyCode == 123) e.preventDefault();
-    if (e.ctrlKey && e.shiftKey && e.keyCode === 73) e.preventDefault();
-    if (e.ctrlKey && e.shiftKey && e.keyCode === 74) e.preventDefault();
-  });
+  // window.addEventListener("contextmenu", (e) => e.preventDefault());
+  // window.addEventListener("keydown", (e) => {
+  //   if (e.keyCode == 123) e.preventDefault();
+  //   if (e.ctrlKey && e.shiftKey && e.keyCode === 73) e.preventDefault();
+  //   if (e.ctrlKey && e.shiftKey && e.keyCode === 74) e.preventDefault();
+  // });
   
   return (
     <>
-      <Header />
+    {/* {pathname === '/' ? 
+            <Navbar hclass={'wpo-header-style-3'} Logo={Logo} />  : <Header />} */}
+    {pathname === '/' ? <Header1 /> : <Header />}
+      {/* <Header /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -198,6 +205,13 @@ function App() {
             </Dashboard>
           </ProtectedRoute>
         } ></Route>
+        <Route path="/admin/customproducts" element={
+          <ProtectedRoute isAdmin={true}>
+            <Dashboard activeTab={4}>
+              <CustomProductTable />
+            </Dashboard>
+          </ProtectedRoute>
+        } ></Route>
 
         <Route path="/admin/new_product" element={
           <ProtectedRoute isAdmin={true}>
@@ -217,7 +231,7 @@ function App() {
 
         <Route path="/admin/users" element={
           <ProtectedRoute isAdmin={true}>
-            <Dashboard activeTab={4}>
+            <Dashboard activeTab={5}>
               <UserTable />
             </Dashboard>
           </ProtectedRoute>
@@ -225,7 +239,7 @@ function App() {
 
         <Route path="/admin/user/:id" element={
           <ProtectedRoute isAdmin={true}>
-            <Dashboard activeTab={4}>
+            <Dashboard activeTab={5}>
               <UpdateUser />
             </Dashboard>
           </ProtectedRoute>
@@ -233,7 +247,7 @@ function App() {
 
         <Route path="/admin/reviews" element={
           <ProtectedRoute isAdmin={true}>
-            <Dashboard activeTab={5}>
+            <Dashboard activeTab={6}>
               <ReviewsTable />
             </Dashboard>
           </ProtectedRoute>

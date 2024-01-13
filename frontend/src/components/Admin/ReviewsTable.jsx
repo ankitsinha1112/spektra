@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSnackbar } from 'notistack';
-import { clearErrors, deleteReview, getAllReviews } from '../../actions/productAction';
+import { clearErrors, deleteReview, getAllReviews,getAllProductsReviews } from '../../actions/productAction';
 import Rating from '@mui/material/Rating';
 import Actions from './Actions';
 import { DELETE_REVIEW_RESET } from '../../constants/productConstants';
@@ -10,34 +10,56 @@ import MetaData from '../Layouts/MetaData';
 import BackdropLoader from '../Layouts/BackdropLoader';
 
 const ReviewsTable = () => {
-
+    const [selectedProductId, setSelectedProductId] = useState("");
     const dispatch = useDispatch();
     const { enqueueSnackbar } = useSnackbar();
     const [productId, setProductId] = useState("");
 
-    const { reviews, error } = useSelector((state) => state.reviews);
+    const { reviews, error } = useSelector((state) => {
+        if (productId === "") {
+            return state.allreviews;
+        } else {
+            return state.reviews;
+        }
+    });
+    // const { allReviews, allReviewsLoading, allReviewsError } = useSelector((state) => state.allreviews);
     const { loading, isDeleted, error: deleteError } = useSelector((state) => state.review);
 
     useEffect(() => {
-        if (productId.length === 24) {
+        if (productId === "") {
+            // Fetch all reviews when productId is empty
+        dispatch(getAllProductsReviews());
+        } else if (productId.length === 24) {
+            // Fetch reviews for a specific product
             dispatch(getAllReviews(productId));
         }
+        // if (productId.length === 24) {
+        //     dispatch(getAllReviews(productId));
+        // }
         if (error) {
             enqueueSnackbar(error, { variant: "error" });
             dispatch(clearErrors());
+            window.location.reload();
         }
         if (deleteError) {
             enqueueSnackbar(deleteError, { variant: "error" });
             dispatch(clearErrors());
+            window.location.reload();
         }
         if (isDeleted) {
             enqueueSnackbar("Review Deleted Successfully", { variant: "success" });
             dispatch({ type: DELETE_REVIEW_RESET });
+            window.location.reload();
         }
     }, [dispatch, error, deleteError, isDeleted, productId, enqueueSnackbar]);
 
     const deleteReviewHandler = (id) => {
+        if (productId.length === 24) {
         dispatch(deleteReview(id, productId));
+             }
+        else{
+            dispatch(deleteReview(id, selectedProductId));
+        }
     }
 
     const columns = [
@@ -94,6 +116,7 @@ const ReviewsTable = () => {
             rating: rev.rating,
             comment: rev.comment,
             user: rev.name,
+            productId: rev.product_id,
         });
     });
 
@@ -113,6 +136,11 @@ const ReviewsTable = () => {
                     columns={columns}
                     pageSize={10}
                     disableSelectIconOnClick
+                    onSelectionModelChange={(newSelection) => {
+                        // Assuming you have a unique identifier for the productId, adjust accordingly
+                        const selectedRow = rows.find(row => newSelection.includes(row.id));
+                        setSelectedProductId(selectedRow ? selectedRow.productId : "");
+                    }}
                     sx={{
                         boxShadow: 0,
                         border: 0,

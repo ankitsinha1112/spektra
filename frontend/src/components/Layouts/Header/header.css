@@ -1,0 +1,34 @@
+/* Your existing logo style */
+/* .h-full {
+    height: 100%;
+  }
+  
+  .w-full {
+    width: 100%;
+  }
+  
+  .object-contain {
+    object-fit: contain;
+  } */
+  
+  /* New styles for the scrolled logo */
+  .logo-scroll {
+    height: 45vh; /* Adjust the height as needed */
+    transition: height 1.3s ease; /* Smooth transition effect for height changes */
+  }
+  
+  /* Additional styles for the scrolled header, if needed */
+  .bgcolorchange {
+    background-color: #000; /* Change to your desired background color */
+    transition: background-color 0.3s ease; /* Smooth transition effect for background color changes */
+  }
+  .hidde{
+    display: none;
+  }
+  .main-scroll{
+    justify-content: center !important;
+  }
+  .main1-scroll{
+    height: 45vh;
+    align-items: flex-start;
+  }

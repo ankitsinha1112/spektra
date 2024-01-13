@@ -114,8 +114,8 @@ const NewProduct = () => {
             enqueueSnackbar("Add Brand Logo", { variant: "warning" });
             return;
         }
-        if (specs.length <= 1) {
-            enqueueSnackbar("Add Minimum 2 Specifications", { variant: "warning" });
+        if (specs.length < 1) {
+            enqueueSnackbar("Add Minimum 1 Specifications", { variant: "warning" });
             return;
         }
         if (images.length <= 0) {

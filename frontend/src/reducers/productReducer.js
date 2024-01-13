@@ -257,6 +257,34 @@ export const productReviewsReducer = (state = { reviews: [] }, { type, payload }
             return state;
     }
 }
+export const allproductReviewsReducer = (state = { reviews: [] }, { type, payload }) => {
+
+    switch (type) {
+        case ALL_REVIEWS_REQUEST:
+            return {
+                ...state,
+                loading: true,
+            };
+        case ALL_REVIEWS_SUCCESS:
+            return {
+                loading: false,
+                reviews: payload,
+            };
+        case ALL_REVIEWS_FAIL:
+            return {
+                ...state,
+                loading: false,
+                error: payload,
+            };
+        case CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null,
+            };
+        default:
+            return state;
+    }
+}
 
 export const reviewReducer = (state = {}, { type, payload }) => {
 

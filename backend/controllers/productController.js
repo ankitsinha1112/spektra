@@ -254,6 +254,43 @@ exports.createProductReview = asyncErrorHandler(async (req, res, next) => {
     });
 });
 
+// Get All Reviews of Products
+// exports.getAllProductReviews = asyncErrorHandler(async (req, res, next) => {
+//     // Find all products that have reviews
+//     const productsWithReviews = await Product.find({ "reviews.0": { $exists: true } });
+
+//     // Aggregate reviews from all products
+//     const allReviews = productsWithReviews.flatMap(product => product.reviews);
+
+//     res.status(200).json({
+//         success: true,
+//         reviews: allReviews
+//     });
+// });
+exports.getAllProductReviews = asyncErrorHandler(async (req, res, next) => {
+    try {
+        // Find all products that have reviews
+        const productsWithReviews = await Product.find({ "reviews.0": { $exists: true } });
+
+        // Aggregate reviews from all products with product_id
+        const allReviews = productsWithReviews.flatMap(product => {
+            const productId = product._id; // Assuming your Product model has an '_id' field
+            return product.reviews.map(review => ({ ...review.toObject(), product_id: productId }));
+        });
+
+        res.status(200).json({
+            success: true,
+            reviews: allReviews
+        });
+    } catch (error) {
+        // Handle errors appropriately
+        console.error("Error in getAllProductReviews:", error);
+        res.status(500).json({
+            success: false,
+            error: "Internal Server Error"
+        });
+    }
+});
 // Get All Reviews of Product
 exports.getProductReviews = asyncErrorHandler(async (req, res, next) => {
 
