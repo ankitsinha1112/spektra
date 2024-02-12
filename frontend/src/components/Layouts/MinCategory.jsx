@@ -58,7 +58,7 @@ const MinCategory = () => {
     };
 
     return (
-        <section className="hidden sm:block bg-white w-full px-2 sm:px-12 overflow-hidden border-b mt-14 relative">
+        <section className="hidden sm:block bg-white w-full px-2 sm:px-12 overflow-hidden border-b mt-4 relative">
             <div className="flex items-center justify-between p-0.5">
                 {categories.map((category, i) => (
                     <div key={i} className="group relative">

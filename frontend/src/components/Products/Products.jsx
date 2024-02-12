@@ -89,7 +89,7 @@ const Products = () => {
         <>
             <MetaData title="All Products " />
 
-            <MinCategory />
+            {/* <MinCategory /> */}
             <main className="w-full mt-14 sm:mt-0">
 
                 {/* <!-- row --> */}

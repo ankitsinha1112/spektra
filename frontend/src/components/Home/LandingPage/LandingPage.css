@@ -1,0 +1,30 @@
+/* #landingPage {
+    height: 100vh;
+    overflow: hidden !important;
+    background: url('../../imgs/logo_circle.png') no-repeat center/contain, #E3E8EA;
+    background-size: 60% 45%;
+} */
+#landingPage {
+    height: 100vh;
+    /* height: 60vh; */
+    /* overflow: hidden !important;
+    background: url('../../imgs/logo_circle.png') no-repeat center/contain, #E3E8EA;
+    background-size: 60% 45%; */
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Style the left image */
+.left-image {
+    max-width: 10%;
+}
+
+/* Style the right image */
+.right-image {
+    max-width: 10%;
+}

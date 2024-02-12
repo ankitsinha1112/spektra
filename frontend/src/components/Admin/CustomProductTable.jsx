@@ -123,12 +123,12 @@ const CustomProductTable = () => {
 
     return (
         <>
-            <MetaData title="Admin Custom Products " />
+            <MetaData title="Admin Custom Orders " />
 
             {loading && <BackdropLoader />}
 
             <div className="flex justify-between items-center">
-                <h1 className="text-lg font-medium uppercase">Custom products</h1>
+                <h1 className="text-lg font-medium uppercase">Custom Orders</h1>
                 {/* <Link to="/admin/new_product" className="py-2 px-4 rounded shadow font-medium text-white bg-primary-blue hover:shadow-lg">New Product</Link> */}
             </div>
             <div className="bg-white rounded-xl shadow-lg w-full" style={{ height: 470 }}>

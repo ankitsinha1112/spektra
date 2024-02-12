@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <>
       <MetaData title="Online Shopping Site for Crazy Tatoo." />
-      <Categories />
+      {/* <Categories /> */}
       <main className="flex flex-col gap-3 px-2 mt-16 sm:mt-2">
         <Banner />
         <BannerTitle title={"No Regrets, Only Style!"} custom={false} para={"Bid farewell to tattoo regrets and embrace the fearless life of temporary ink. No more tattoo regrets! Spektra Tatz is here to rescue you from permanent ink mishaps. Say hello to temporary tattoos—the ultimate freedom to express yourself without the lifelong commitment. Experiment, have fun, and change your look as often as your mood strikes. It's time to unleash your inner badass and make a statement that's as fierce as you are."} />

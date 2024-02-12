@@ -15,6 +15,7 @@ import ResetPassword from './components/User/ResetPassword';
 import Account from './components/User/Account';
 import ProtectedRoute from './Routes/ProtectedRoute';
 import Home from './components/Home/Home';
+import LandingPage from './components/Home/LandingPage/LandingPage';
 import Custom from './components/Custom/Index';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import Products from './components/Products/Products';
@@ -87,10 +88,11 @@ function App() {
     <>
     {/* {pathname === '/' ? 
             <Navbar hclass={'wpo-header-style-3'} Logo={Logo} />  : <Header />} */}
-    {pathname === '/' ? <Header1 /> : <Header />}
+    {pathname === '/' ? null : <Header />}
       {/* <Header /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/custom" element={<Custom />} />
@@ -184,7 +186,7 @@ function App() {
 
         <Route path="/admin/orders" element={
           <ProtectedRoute isAdmin={true}>
-            <Dashboard activeTab={1}>
+            <Dashboard activeTab={3}>
               <OrderTable />
             </Dashboard>
           </ProtectedRoute>
@@ -192,7 +194,7 @@ function App() {
 
         <Route path="/admin/order/:id" element={
           <ProtectedRoute isAdmin={true}>
-            <Dashboard activeTab={1}>
+            <Dashboard activeTab={3}>
               <UpdateOrder />
             </Dashboard>
           </ProtectedRoute>
@@ -200,7 +202,7 @@ function App() {
 
         <Route path="/admin/products" element={
           <ProtectedRoute isAdmin={true}>
-            <Dashboard activeTab={2}>
+            <Dashboard activeTab={1}>
               <ProductTable />
             </Dashboard>
           </ProtectedRoute>
@@ -215,7 +217,7 @@ function App() {
 
         <Route path="/admin/new_product" element={
           <ProtectedRoute isAdmin={true}>
-            <Dashboard activeTab={3}>
+            <Dashboard activeTab={2}>
               <NewProduct />
             </Dashboard>
           </ProtectedRoute>
@@ -223,7 +225,7 @@ function App() {
 
         <Route path="/admin/product/:id" element={
           <ProtectedRoute isAdmin={true}>
-            <Dashboard activeTab={2}>
+            <Dashboard activeTab={1}>
               <UpdateProduct />
             </Dashboard>
           </ProtectedRoute>
@@ -256,7 +258,8 @@ function App() {
         <Route path="*" element={<NotFound />}></Route>
 
       </Routes>
-      <Footer />
+      {pathname === '/' ? null : <Footer />}
+      {/* <Footer /> */}
     </>
   );
 }

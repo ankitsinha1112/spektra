@@ -31,7 +31,9 @@ import simg8 from '../../assets/custom/6 inch x 3 inch.jpg'
 import simg9 from '../../assets/custom/7 inch x 4 inch.png'
 import simg10 from '../../assets/custom/8 inch x 4 inch.png'
 import { Input } from '@mui/material';
-
+import MDBox from '../MDBox';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -196,6 +198,8 @@ const Index = () => {
   // custom drop down start
   const [dragOver, setDragOver] = useState(false);
   const [loading1, setLoading1] = useState(false);
+  const [toggle1, setToggle1] = useState(false);
+  const [toggle2, setToggle2] = useState(false);
   const [imagePreview, setImagePreview] = useState(null);
 
   const handleDragOver = useCallback((event) => {
@@ -275,19 +279,96 @@ const Index = () => {
   return (
     <>
       <MetaData title="Spektra | Custom" />
-      <Categories />
+      {/* <Categories /> */}
       <main className="flex flex-col gap-3 px-2 mt-16 sm:mt-2">
         <BannerTitle title={"Create Your Own Tattoo Masterpiece "} custom={true} para={"Don't settle for ordinary. With our options to create custom temporary tattoos, you become the artist! Design a unique masterpiece using AI, that perfectly captures your personality and makes a bold statement. Be the envy of your friends with a custom creation that's as epic as you are."} />
-        <div className='customcards'>
+        {/* <BannerTitle title={"Note : - Please add your Temperory and Semi permanent Tatoos to your cart before you create a custom Tatoo."} 
+        custom={true} para={"Don't worry if you don't have a tattoo design ready. Use any of the options below to find your tattoo idea & share us the same. Find tattoo using Pinterest - steps to 
+        find and share us your tattoo idea. ⏬ Find tattoo using AI tattoo generator - steps to find and share us your Tattoo idea ⏬"} /> */}
+        {/* <MDBox> */}
+        <Card >
+        {/* <Card sx={{ minWidth: 275 }}> */}
+      <CardContent>
+        {/* <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+          Word of the Day
+        </Typography> */}
+        <Typography variant="h5" component="div">
+        Note : - Please add your Temperory and Semi permanent Tatoos to your cart before you create a custom Tatoo.
+        </Typography>
+        {/* <Typography sx={{ mb: 1.5 }} color="text.secondary">
+          adjective
+        </Typography>
+        <Typography variant="body2">
+          well meaning and kindly.
+          <br />
+          {'"a benevolent smile"'}
+        </Typography> */}
+      </CardContent>
+    </Card>
+        <Card >
+      <CardContent>
+        <Typography variant="h5" component="div" >
+        Don't worry if you don't have a tattoo design ready.<br/> Use any of the options below to find your tattoo idea & share us the same.<br/><br/> Find tattoo using Pinterest - steps to 
+        find and share us your tattoo idea. 
+        <IconButton color="primary" onClick={() => setToggle1(!toggle1)} aria-label="click1" component="span">
+                {/* <CloudUploadIcon style={{ fontSize: 60 }} /> */}
+                ⏬
+        </IconButton>
+        </Typography>
+        {
+          (toggle1)?
+          <Typography variant="h6" component="div" >
+        Tips To find the tattoo and download the pictures from Pinterest and upload in the website.<br />
+                •	Type in the search bar of Pinterest:   “Tattoo Type” Tattoo designs on paper<br />
+                •	Click on the 3 dots seen on the image – Download the image from Pinterest. <br />
+                •	Once downloaded - Upload/Drag and drop the image on the custom create section of this website.
+         <br/><br/>
+        </Typography>:null
+        }
+        <Typography variant="h5" component="div" >
+        Find tattoo using AI tattoo generator - steps to find and share us your Tattoo idea 
+        <IconButton color="primary" onClick={() => setToggle2(!toggle2)} aria-label="click2" component="span">
+                {/* <CloudUploadIcon style={{ fontSize: 60 }} /> */}
+                ⏬
+        </IconButton>
+         <br/>
+        </Typography>
+        {
+          (toggle2)?
+          <Typography variant="h6" component="div" >
+        Tips to find the tattoo and download from AI Tattoo Creator. <br />
+                •	From the Tattoo ideas (https://blackink.ai/tattoo-ideas) - Choose any kind of tattoo from the category. <br />
+                •	A new page opens with a collection of different designs from the same category. - Click on any design style you are interested in.<br />
+                •	A group of 4 images appears - Right click on the interested image - Click on “save image as” option (NOTE - do not use the download button available on the image).<br />
+                •	Give a file name for the design and click on Save button. (While saving , check the file type available – Always go for PNG Image type)<br />
+                •	Once saved – upload/drag & drop the saved image into the custom create section of this website.
+         <br/><br/>
+        </Typography>:null
+        }
+        {/* <Typography sx={{ mb: 1.5 }} color="text.secondary">
+          adjective
+        </Typography> */}
+      </CardContent>
+    </Card>
+        {/* </MDBox> */}
+        {/* <div className='customcards'>
           <Flippy
-            flipOnHover={true}
+            flipOnHover={false}
+            flipOnClick={false}
             flipDirection="horizontal"
             className="cardddd"
             style={{ width: '450px', height: '300px' }}
-          // style={{ width: '300px', height: '300px' }}
           >
             <FrontSide className="frontcaard">
-              <h1>A.	Pinterest</h1>
+              <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+              <h1 style={{marginBottom:'2rem',fontSize:'24px'}}>A.	Pinterest</h1>
+              <p className='flipbackpara'>
+                Tips To find the tattoo and download the pictures from Pinterest and upload in the website.<br />
+                •	Type in the search bar of Pinterest:   “Tattoo Type” Tattoo designs on paper<br />
+                •	Click on the 3 dots seen on the image – Download the image from Pinterest. <br />
+                •	Once downloaded - Upload/Drag and drop the image on the custom create section of this website.
+              </p>
+              </div>
             </FrontSide>
             <BackSide className="bacckkcard">
               <h1></h1>
@@ -300,14 +381,22 @@ const Index = () => {
             </BackSide>
           </Flippy>
           <Flippy
-            flipOnHover={true}
+            flipOnHover={false}
+            flipOnClick={false}
             flipDirection="horizontal"
             className="cardddd"
             style={{ width: '450px', height: '300px' }}
-          // style={{ width: '300px', height: '300px' }}
           >
             <FrontSide className="frontcaard1">
-              <h1>B.	AI Tattoo Creator</h1>
+              <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+              <h1 style={{marginBottom:'2rem',fontSize:'24px'}}>B.	AI Tattoo Creator</h1>
+              <p className='flipbackpara'>
+                Tips To find the tattoo and download the pictures from Pinterest and upload in the website.<br />
+                •	Type in the search bar of Pinterest:   “Tattoo Type” Tattoo designs on paper<br />
+                •	Click on the 3 dots seen on the image – Download the image from Pinterest. <br />
+                •	Once downloaded - Upload/Drag and drop the image on the custom create section of this website.
+              </p>
+              </div>
             </FrontSide>
             <BackSide className="bacckkcard1">
               <h1></h1>
@@ -321,7 +410,7 @@ const Index = () => {
               </p>
             </BackSide>
           </Flippy>
-        </div>
+        </div> */}
         <Paper
           variant="outlined"
           onDragOver={handleDragOver}
@@ -573,7 +662,7 @@ const Index = () => {
                   />
                 </Box>
                 <Box style={{boxShadow:'0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',marginTop:'1.5rem'}}>
-                <Box p={1} style={{fontSize:'1.5rem',fontWeight:'700'}}>
+                <Box p={1} style={{fontSize:'1.3rem',fontWeight:'700'}}>
                   Price = ₹ {getPrice()}
                 </Box>
                 <Box p={1}>

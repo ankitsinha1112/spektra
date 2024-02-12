@@ -22,23 +22,23 @@ const navMenu = [
         ref: "/admin/dashboard",
     },
     {
+        icon: <InventoryIcon />,
+        label: "Our Products",
+        ref: "/admin/products",
+    },
+    {
+        icon: <AddBoxIcon />,
+        label: "Add New Product",
+        ref: "/admin/new_product",
+    },
+    {
         icon: <ShoppingBagIcon />,
         label: "Orders",
         ref: "/admin/orders",
     },
     {
-        icon: <InventoryIcon />,
-        label: "Products",
-        ref: "/admin/products",
-    },
-    {
-        icon: <AddBoxIcon />,
-        label: "Add Product",
-        ref: "/admin/new_product",
-    },
-    {
         icon: <DashboardCustomizeIcon />,
-        label: "Custom Products",
+        label: "Custom Orders",
         ref: "/admin/customproducts",
     },
     {

@@ -3,7 +3,9 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import Searchbar from './Searchbar';
-import logo from '../../../assets/images/logo.png';
+// import logo from '../../../assets/images/headintro.gif';
+import logo from '../../../assets/images/head.png';
+// import logo from '../../../assets/images/logo2.png';
 import PrimaryDropDownMenu from './PrimaryDropDownMenu';
 import SecondaryDropDownMenu from './SecondaryDropDownMenu';
 import { useState } from 'react';
@@ -21,16 +23,18 @@ const Header = () => {
 
   return (
 
-    <header className="bg-primary-blue fixed top-0 py-2.5 w-full z-10 bgcolorchange">
+    <header className="bg-primary-blue top-0 py-2.5 w-full z-10 bgcolorchange" style={{display:'flex',position:'sticky'}}>
+    {/* <header className="bg-primary-blue fixed top-0 py-2.5 w-full z-10 bgcolorchange" style={{display:'flex'}}> */}
 
       {/* <!-- navbar container --> */}
-      <div className="w-full sm:w-9/12 px-1 sm:px-4 m-auto flex justify-between items-center relative">
+          <Link className="h-9 mr-1 sm:mr-4" to="/" style={{display:'flex',width:'150px',height:'9vh',paddingLeft:'1rem'}}>
+            <img draggable="false" className="h-full w-full object-contain" src={logo} alt="Logo" />
+          </Link>
+      <div className="w-full sm:w-9/12 px-1 m-auto flex justify-between items-center relative">
+      {/* <div className="w-full sm:w-9/12 px-1 sm:px-4 m-auto flex justify-between items-center relative"> */}
 
         {/* <!-- logo & search container --> */}
         <div className="flex items-center flex-1">
-          <Link className="h-9 mr-1 sm:mr-4" to="/">
-            <img draggable="false" className="h-full w-full object-contain" src={logo} alt="Logo" />
-          </Link>
 
           <Searchbar />
         </div>
