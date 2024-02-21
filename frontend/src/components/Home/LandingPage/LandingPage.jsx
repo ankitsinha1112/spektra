@@ -1,11 +1,10 @@
 import "./LandingPage.css";
 import React, { useEffect } from "react";
 // import { Preferences } from "@capacitor/preferences";
-import loginLogo from "../../../assets/images/full_new.gif";
+import loginLogo from "../../../assets/images/fulllogo.gif";
+// import loginLogo from "../../../assets/images/full_new.gif";
 // import Rajsthan from "../../../assets/images/tagline.gif";
 // import Election from "../../../assets/images/headintro.gif";
-// import Rajsthan from "../../../assets/images/rajasthan.png";
-// import Election from "../../../assets/images/election.png";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import { Link, useNavigate } from 'react-router-dom';
@@ -26,7 +25,7 @@ function LandingPage() {
       // }
       navigate("/home");
       // console.log(userData)
-    }, 3000);
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, []);

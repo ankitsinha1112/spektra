@@ -99,7 +99,7 @@ const Products = () => {
                     <div className="hidden sm:flex flex-col w-1/5 px-1">
 
                         {/* <!-- nav tiles --> */}
-                        <div className="flex flex-col bg-white rounded-sm shadow" style={{position: "sticky",top: "9vh"}}>
+                        <div className="flex flex-col bg-white rounded-sm shadow" style={{position: "sticky",top: "12vh"}}>
 
                             {/* <!-- filters header --> */}
                             <div className="flex items-center justify-between gap-5 px-4 py-2 border-b">
@@ -214,7 +214,7 @@ const Products = () => {
                         {loading ? <Loader /> : (
                             <div className="flex flex-col gap-2 pb-4 justify-center items-center w-full overflow-hidden bg-white">
 
-                                <div className="grid grid-cols-1 sm:grid-cols-3 w-full place-content-start overflow-hidden pb-4 border-b" 
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full place-content-start overflow-hidden pb-4 border-b" 
                                 // style={{columnGap: '1rem',rowGap: '1rem'}}
                                 >
                                     {products?.map((product, index) => (

@@ -65,6 +65,11 @@ const Header = () => {
             <span><DashboardCustomizeIcon /></span>
             Custom
           </Link>
+          <span className="userDropDown flex items-center text-black font-medium gap-1 cursor-pointer" onClick={() => setToggleSecondaryDropDown(!toggleSecondaryDropDown)}>Ready Tattoos
+             <span>{toggleSecondaryDropDown ? <ExpandLessIcon sx={{ fontSize: "16px" }} /> : <ExpandMoreIcon sx={{ fontSize: "16px" }} />}</span>
+          </span>
+            
+          {toggleSecondaryDropDown && <SecondaryDropDownMenu />}
           <Link to="/cart" className="flex items-center text-black font-medium gap-2 relative">
             <span><ShoppingCartIcon /></span>
             {cartItems.length > 0 &&

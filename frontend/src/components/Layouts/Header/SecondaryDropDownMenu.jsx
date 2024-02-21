@@ -1,6 +1,6 @@
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
-import LiveHelpIcon from '@mui/icons-material/LiveHelp';
+import InventoryIcon from '@mui/icons-material/Inventory';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import DownloadIcon from '@mui/icons-material/Download';
 
@@ -8,31 +8,48 @@ const SecondaryDropDownMenu = () => {
 
     const navs = [
         {
-            title: "Notification Preferences",
-            icon: <NotificationsIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://www.flipkart.com/communication-preferences/push",
+            title: "Temperory Tattoo",
+            icon: <InventoryIcon sx={{ fontSize: "18px" }} />,
+            redirect: "/products?type=Temperory",
         },
         {
-            title: "Sell on Flipkart",
-            icon: <BusinessCenterIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://seller.flipkart.com/sell-online",
+            title: "Semi Permanent Tattoo",
+            icon: <AddShoppingCartIcon sx={{ fontSize: "18px" }} />,
+            redirect: "/products?type=Semi-permanent",
         },
-        {
-            title: "24x7 Customer Care",
-            icon: <LiveHelpIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://www.flipkart.com/helpcentre",
-        },
-        {
-            title: "Advertise",
-            icon: <TrendingUpIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://advertising.flipkart.com",
-        },
-        {
-            title: "Download App",
-            icon: <DownloadIcon sx={{ fontSize: "18px" }} />,
-            redirect: "https://www.flipkart.com/mobile-apps",
-        },
+        // {
+        //     title: "Advertise",
+        //     icon: <TrendingUpIcon sx={{ fontSize: "18px" }} />,
+        //     redirect: "https://advertising.flipkart.com",
+        // },
     ]
+    // const navs = [
+    //     {
+    //         title: "Notification Preferences",
+    //         icon: <NotificationsIcon sx={{ fontSize: "18px" }} />,
+    //         redirect: "https://www.flipkart.com/communication-preferences/push",
+    //     },
+    //     {
+    //         title: "Sell on Flipkart",
+    //         icon: <BusinessCenterIcon sx={{ fontSize: "18px" }} />,
+    //         redirect: "https://seller.flipkart.com/sell-online",
+    //     },
+    //     {
+    //         title: "24x7 Customer Care",
+    //         icon: <LiveHelpIcon sx={{ fontSize: "18px" }} />,
+    //         redirect: "https://www.flipkart.com/helpcentre",
+    //     },
+    //     {
+    //         title: "Advertise",
+    //         icon: <TrendingUpIcon sx={{ fontSize: "18px" }} />,
+    //         redirect: "https://advertising.flipkart.com",
+    //     },
+    //     {
+    //         title: "Download App",
+    //         icon: <DownloadIcon sx={{ fontSize: "18px" }} />,
+    //         redirect: "https://www.flipkart.com/mobile-apps",
+    //     },
+    // ]
 
     return (
         <div className="absolute w-60 -right-2 top-9 bg-white shadow-2xl rounded flex-col text-sm">

@@ -30,6 +30,7 @@ import simg7 from '../../assets/custom/5 inch x 3 inch.png'
 import simg8 from '../../assets/custom/6 inch x 3 inch.jpg'
 import simg9 from '../../assets/custom/7 inch x 4 inch.png'
 import simg10 from '../../assets/custom/8 inch x 4 inch.png'
+import arrow from '../../assets/images/arrow.png'
 import { Input } from '@mui/material';
 import MDBox from '../MDBox';
 import Card from '@mui/material/Card';
@@ -312,7 +313,8 @@ const Index = () => {
         find and share us your tattoo idea. 
         <IconButton color="primary" onClick={() => setToggle1(!toggle1)} aria-label="click1" component="span">
                 {/* <CloudUploadIcon style={{ fontSize: 60 }} /> */}
-                ⏬
+                {/* ⏬ */}
+                <img src={arrow} alt="⏬" />
         </IconButton>
         </Typography>
         {
